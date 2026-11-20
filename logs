@@ -1,0 +1,167 @@
+2026-11-16 16:03:10,175 | INFO     | software_fj.main       | ==================== Inicio de la simulación ====================
+2026-11-16 16:03:10,175 | DEBUG    | software_fj.cliente    | Cliente 1 creado
+2026-11-16 16:03:10,175 | INFO     | software_fj.gestor     | Cliente 1 registrado: Ana Gómez
+2026-11-16 16:03:10,175 | INFO     | software_fj.main       | Op 01 - Registrar cliente Ana Gómez | OK
+2026-11-16 16:03:10,175 | DEBUG    | software_fj.main       | Finalizó Op 01 - Registrar cliente Ana Gómez
+2026-11-16 16:03:10,175 | DEBUG    | software_fj.cliente    | Cliente 2 creado
+2026-11-16 16:03:10,175 | INFO     | software_fj.gestor     | Cliente 2 registrado: Luis Pérez
+2026-11-16 16:03:10,175 | INFO     | software_fj.main       | Op 02 - Registrar cliente Luis Pérez | OK
+2026-11-16 16:03:10,175 | DEBUG    | software_fj.main       | Finalizó Op 02 - Registrar cliente Luis Pérez
+2026-11-16 16:03:10,176 | ERROR    | software_fj.main       | Op 03 - Cliente con correo inválido | ClienteError: [FJ-110] El correo 'pedro@correo' no tiene un formato válido
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.main       | Finalizó Op 03 - Cliente con correo inválido
+2026-11-16 16:03:10,176 | ERROR    | software_fj.main       | Op 04 - Cliente con nombre vacío | ClienteError: [FJ-110] El campo 'nombre' debe tener entre 3 y 60 caracteres
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.main       | Finalizó Op 04 - Cliente con nombre vacío
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.cliente    | Cliente 5 creado
+2026-11-16 16:03:10,176 | ERROR    | software_fj.main       | Op 05 - Cliente con correo duplicado | RegistroDuplicado: [FJ-500] El correo ana@correo.com ya está registrado
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.main       | Finalizó Op 05 - Cliente con correo duplicado
+2026-11-16 16:03:10,176 | INFO     | software_fj.gestor     | Servicio 1 creado: Sala A
+2026-11-16 16:03:10,176 | INFO     | software_fj.main       | Op 06 - Crear sala de reuniones | OK
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.main       | Finalizó Op 06 - Crear sala de reuniones
+2026-11-16 16:03:10,176 | INFO     | software_fj.gestor     | Servicio 2 creado: Portátil Pro
+2026-11-16 16:03:10,176 | INFO     | software_fj.main       | Op 07 - Crear alquiler de equipo | OK
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.main       | Finalizó Op 07 - Crear alquiler de equipo
+2026-11-16 16:03:10,176 | INFO     | software_fj.gestor     | Servicio 3 creado: Asesoría Python
+2026-11-16 16:03:10,176 | INFO     | software_fj.main       | Op 08 - Crear asesoría de Python | OK
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.main       | Finalizó Op 08 - Crear asesoría de Python
+2026-11-16 16:03:10,176 | ERROR    | software_fj.main       | Op 09 - Servicio con precio negativo | ServicioError: [FJ-200] El campo 'precio por hora' debe ser > 0
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.main       | Finalizó Op 09 - Servicio con precio negativo
+2026-11-16 16:03:10,176 | ERROR    | software_fj.main       | Op 10 - Servicio con parámetros faltantes | ParametroFaltanteError: [FJ-120] Parámetros incorrectos para el servicio 'equipo'  <-causado por-  TypeError: AlquilerEquipo.__init__() missing 2 required positional arguments: 'precio_hora' and 'tipo_equipo'
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.main       | Finalizó Op 10 - Servicio con parámetros faltantes
+2026-11-16 16:03:10,176 | ERROR    | software_fj.main       | Op 11 - Tipo de servicio inexistente | ServicioError: [FJ-200] Tipo de servicio desconocido: 'catering' (disponibles: sala, equipo, asesoria)
+2026-11-16 16:03:10,176 | DEBUG    | software_fj.main       | Finalizó Op 11 - Tipo de servicio inexistente
+2026-11-16 16:03:10,176 | CRITICAL | software_fj.main       | Op 12 - Instanciar la clase abstracta Servicio | error inesperado: TypeError("Can't instantiate abstract class Servicio without an implementation for abstract methods 'calcular_costo', 'describir', 'validar_horas'")
+Traceback (most recent call last):
+  File "/home/claude/software_fj_proyecto/main.py", line 42, in ejecutar
+    resultado = operacion()
+                ^^^^^^^^^^^
+  File "/home/claude/software_fj_proyecto/main.py", line 98, in <lambda>
+    lambda: Servicio(7, "Genérico", 1000))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class Servicio without an implementation for abstract methods 'calcular_costo', 'describir', 'validar_horas'
+2026-11-16 16:03:10,178 | DEBUG    | software_fj.main       | Finalizó Op 12 - Instanciar la clase abstracta Servicio
+2026-11-16 16:03:10,178 | INFO     | software_fj.reserva    | Reserva 1 creada (Ana Gómez, Sala A, 3 h)
+2026-11-16 16:03:10,178 | INFO     | software_fj.main       | Op 13 - Reserva de sala por 3 horas | OK
+2026-11-16 16:03:10,178 | DEBUG    | software_fj.main       | Finalizó Op 13 - Reserva de sala por 3 horas
+2026-11-16 16:03:10,178 | INFO     | software_fj.reserva    | Reserva 2 creada (Luis Pérez, Portátil Pro, 30 h)
+2026-11-16 16:03:10,178 | INFO     | software_fj.main       | Op 14 - Reserva de equipo por 30 horas | OK
+2026-11-16 16:03:10,178 | DEBUG    | software_fj.main       | Finalizó Op 14 - Reserva de equipo por 30 horas
+2026-11-16 16:03:10,178 | INFO     | software_fj.reserva    | Reserva 3 creada (Luis Pérez, Asesoría Python, 2 h)
+2026-11-16 16:03:10,178 | INFO     | software_fj.main       | Op 15 - Reserva de asesoría por 2 horas | OK
+2026-11-16 16:03:10,178 | DEBUG    | software_fj.main       | Finalizó Op 15 - Reserva de asesoría por 2 horas
+2026-11-16 16:03:10,178 | ERROR    | software_fj.main       | Op 16 - Reserva de asesoría por 20 horas (excede el máximo) | ReservaError: [FJ-300] No se pudo crear la reserva 4 para 'Asesoría Python'  <-causado por-  ServicioError: [FJ-200] El campo 'horas' debe ser <= 8
+2026-11-16 16:03:10,178 | DEBUG    | software_fj.main       | Finalizó Op 16 - Reserva de asesoría por 20 horas (excede el máximo)
+2026-11-16 16:03:10,178 | ERROR    | software_fj.main       | Op 17 - Reserva con cliente inexistente | RegistroNoEncontrado: [FJ-510] No existe un cliente con código 99
+2026-11-16 16:03:10,178 | DEBUG    | software_fj.main       | Finalizó Op 17 - Reserva con cliente inexistente
+2026-11-16 16:03:10,178 | INFO     | software_fj.reserva    | Reserva 1 confirmada
+2026-11-16 16:03:10,178 | DEBUG    | software_fj.reserva    | Fin del intento de confirmar la reserva 1
+2026-11-16 16:03:10,178 | INFO     | software_fj.main       | Op 18 - Confirmar reserva 1 | OK
+2026-11-16 16:03:10,178 | DEBUG    | software_fj.main       | Finalizó Op 18 - Confirmar reserva 1
+2026-11-16 16:03:10,179 | INFO     | software_fj.reserva    | Reserva 1 procesada. Total: $178,500.00
+2026-11-16 16:03:10,179 | INFO     | software_fj.main       | Op 19 - Procesar reserva 1 (IVA por defecto) | OK
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.main       | Finalizó Op 19 - Procesar reserva 1 (IVA por defecto)
+2026-11-16 16:03:10,179 | ERROR    | software_fj.main       | Op 20 - Cancelar reserva 1 ya procesada | OperacionNoPermitida: [FJ-310] No se puede cancelar la reserva 1 en estado 'Procesada' (requiere: Pendiente, Confirmada)
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.main       | Finalizó Op 20 - Cancelar reserva 1 ya procesada
+2026-11-16 16:03:10,179 | INFO     | software_fj.reserva    | Reserva 2 confirmada
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.reserva    | Fin del intento de confirmar la reserva 2
+2026-11-16 16:03:10,179 | INFO     | software_fj.main       | Op 21 - Confirmar reserva 2 | OK
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.main       | Finalizó Op 21 - Confirmar reserva 2
+2026-11-16 16:03:10,179 | ERROR    | software_fj.main       | Op 22 - Procesar reserva 2 con descuento de 150 % | ReservaError: [FJ-300] Error al procesar la reserva 2  <-causado por-  CalculoError: [FJ-400] Descuento fuera de rango: 1.5 (debe estar entre 0 y 1)
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.main       | Finalizó Op 22 - Procesar reserva 2 con descuento de 150 %
+2026-11-16 16:03:10,179 | ERROR    | software_fj.main       | Op 23 - Procesar reserva 2 con cupón inválido | ReservaError: [FJ-300] Error al procesar la reserva 2  <-causado por-  CalculoError: [FJ-400] Cupón inválido: 'REGALO'
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.main       | Finalizó Op 23 - Procesar reserva 2 con cupón inválido
+2026-11-16 16:03:10,179 | INFO     | software_fj.reserva    | Reserva 2 procesada. Total: $181,440.00
+2026-11-16 16:03:10,179 | INFO     | software_fj.main       | Op 24 - Procesar reserva 2 con IVA 5 % y cupón FJ20 | OK
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.main       | Finalizó Op 24 - Procesar reserva 2 con IVA 5 % y cupón FJ20
+2026-11-16 16:03:10,179 | WARNING  | software_fj.servicio   | Servicio Asesoría Python deshabilitado (mantenimiento)
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.reserva    | Fin del intento de confirmar la reserva 3
+2026-11-16 16:03:10,179 | ERROR    | software_fj.main       | Op 25 - Confirmar reserva 3 con servicio no disponible | ReservaError: [FJ-300] No se pudo confirmar la reserva 3  <-causado por-  ServicioNoDisponible: [FJ-210] El servicio 'Asesoría Python' no está disponible
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.main       | Finalizó Op 25 - Confirmar reserva 3 con servicio no disponible
+2026-11-16 16:03:10,179 | INFO     | software_fj.reserva    | Reserva 3 cancelada (servicio no disponible)
+2026-11-16 16:03:10,179 | INFO     | software_fj.main       | Op 26 - Cancelar reserva 3 | OK
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.main       | Finalizó Op 26 - Cancelar reserva 3
+2026-11-16 16:03:10,179 | ERROR    | software_fj.main       | Op 27 - Cancelar reserva 3 otra vez | OperacionNoPermitida: [FJ-310] No se puede cancelar la reserva 3 en estado 'Cancelada' (requiere: Pendiente, Confirmada)
+2026-11-16 16:03:10,179 | DEBUG    | software_fj.main       | Finalizó Op 27 - Cancelar reserva 3 otra vez
+2026-11-16 16:03:10,179 | INFO     | software_fj.main       | Simulación terminada: 27 operaciones (13 OK, 14 con error)
+2026-11-16 11:39:19,655 | INFO     | software_fj.main       | ==================== Inicio de la simulación ====================
+2026-11-16 11:39:19,656 | DEBUG    | software_fj.cliente    | Cliente 1 creado
+2026-11-16 11:39:19,656 | INFO     | software_fj.gestor     | Cliente 1 registrado: Ana Gómez
+2026-11-16 11:39:19,656 | INFO     | software_fj.main       | Op 01 - Registrar cliente Ana Gómez | OK
+2026-11-16 11:39:19,656 | DEBUG    | software_fj.main       | Finalizó Op 01 - Registrar cliente Ana Gómez
+2026-11-16 11:39:19,656 | DEBUG    | software_fj.cliente    | Cliente 2 creado
+2026-11-16 11:39:19,656 | INFO     | software_fj.gestor     | Cliente 2 registrado: Luis Pérez
+2026-11-16 11:39:19,657 | INFO     | software_fj.main       | Op 02 - Registrar cliente Luis Pérez | OK
+2026-11-16 11:39:19,657 | DEBUG    | software_fj.main       | Finalizó Op 02 - Registrar cliente Luis Pérez
+2026-11-16 11:39:19,657 | ERROR    | software_fj.main       | Op 03 - Cliente con correo inválido | ClienteError: [FJ-110] El correo 'pedro@correo' no tiene un formato válido
+2026-11-16 11:39:19,657 | DEBUG    | software_fj.main       | Finalizó Op 03 - Cliente con correo inválido
+2026-11-16 11:39:19,657 | ERROR    | software_fj.main       | Op 04 - Cliente con nombre vacío | ClienteError: [FJ-110] El campo 'nombre' debe tener entre 3 y 60 caracteres
+2026-11-16 11:39:19,657 | DEBUG    | software_fj.main       | Finalizó Op 04 - Cliente con nombre vacío
+2026-11-16 11:39:19,657 | DEBUG    | software_fj.cliente    | Cliente 5 creado
+2026-11-16 11:39:19,657 | ERROR    | software_fj.main       | Op 05 - Cliente con correo duplicado | RegistroDuplicado: [FJ-500] El correo ana@correo.com ya está registrado
+2026-11-16 11:39:19,658 | DEBUG    | software_fj.main       | Finalizó Op 05 - Cliente con correo duplicado
+2026-11-16 11:39:19,658 | INFO     | software_fj.gestor     | Servicio 1 creado: Sala A
+2026-11-16 11:39:19,658 | INFO     | software_fj.main       | Op 06 - Crear sala de reuniones | OK
+2026-11-16 11:39:19,658 | DEBUG    | software_fj.main       | Finalizó Op 06 - Crear sala de reuniones
+2026-11-16 11:39:19,658 | INFO     | software_fj.gestor     | Servicio 2 creado: Portátil Pro
+2026-11-16 11:39:19,658 | INFO     | software_fj.main       | Op 07 - Crear alquiler de equipo | OK
+2026-11-16 11:39:19,658 | DEBUG    | software_fj.main       | Finalizó Op 07 - Crear alquiler de equipo
+2026-11-16 11:39:19,658 | INFO     | software_fj.gestor     | Servicio 3 creado: Asesoría Python
+2026-11-16 11:39:19,658 | INFO     | software_fj.main       | Op 08 - Crear asesoría de Python | OK
+2026-11-16 11:39:19,659 | DEBUG    | software_fj.main       | Finalizó Op 08 - Crear asesoría de Python
+2026-11-16 11:39:19,659 | ERROR    | software_fj.main       | Op 09 - Servicio con precio negativo | ServicioError: [FJ-200] El campo 'precio por hora' debe ser > 0
+2026-11-16 11:39:19,659 | DEBUG    | software_fj.main       | Finalizó Op 09 - Servicio con precio negativo
+2026-11-16 11:39:19,659 | ERROR    | software_fj.main       | Op 10 - Servicio con parámetros faltantes | ParametroFaltanteError: [FJ-120] Parámetros incorrectos para el servicio 'equipo'  <-causado por-  TypeError: AlquilerEquipo.__init__() missing 2 required positional arguments: 'precio_hora' and 'tipo_equipo'
+2026-11-16 11:39:19,659 | DEBUG    | software_fj.main       | Finalizó Op 10 - Servicio con parámetros faltantes
+2026-11-16 11:39:19,660 | ERROR    | software_fj.main       | Op 11 - Tipo de servicio inexistente | ServicioError: [FJ-200] Tipo de servicio desconocido: 'catering' (disponibles: sala, equipo, asesoria)
+2026-11-16 11:39:19,660 | DEBUG    | software_fj.main       | Finalizó Op 11 - Tipo de servicio inexistente
+2026-11-16 11:39:19,660 | CRITICAL | software_fj.main       | Op 12 - Instanciar la clase abstracta Servicio | error inesperado: TypeError("Can't instantiate abstract class Servicio without an implementation for abstract methods 'calcular_costo', 'describir', 'validar_horas'")
+Traceback (most recent call last):
+  File "C:\Users\Hp\Downloads\software_fj_proyecto\main.py", line 42, in ejecutar
+    resultado = operacion()
+  File "C:\Users\Hp\Downloads\software_fj_proyecto\main.py", line 98, in <lambda>
+    lambda: Servicio(7, "Genérico", 1000))
+            ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class Servicio without an implementation for abstract methods 'calcular_costo', 'describir', 'validar_horas'
+2026-11-16 11:39:19,830 | DEBUG    | software_fj.main       | Finalizó Op 12 - Instanciar la clase abstracta Servicio
+2026-11-16 11:39:19,830 | INFO     | software_fj.reserva    | Reserva 1 creada (Ana Gómez, Sala A, 3 h)
+2026-11-16 11:39:19,830 | INFO     | software_fj.main       | Op 13 - Reserva de sala por 3 horas | OK
+2026-11-16 11:39:19,831 | DEBUG    | software_fj.main       | Finalizó Op 13 - Reserva de sala por 3 horas
+2026-11-16 11:39:19,831 | INFO     | software_fj.reserva    | Reserva 2 creada (Luis Pérez, Portátil Pro, 30 h)
+2026-11-16 11:39:19,831 | INFO     | software_fj.main       | Op 14 - Reserva de equipo por 30 horas | OK
+2026-11-16 11:39:19,831 | DEBUG    | software_fj.main       | Finalizó Op 14 - Reserva de equipo por 30 horas
+2026-11-16 11:39:19,831 | INFO     | software_fj.reserva    | Reserva 3 creada (Luis Pérez, Asesoría Python, 2 h)
+2026-11-16 11:39:19,831 | INFO     | software_fj.main       | Op 15 - Reserva de asesoría por 2 horas | OK
+2026-11-16 11:39:19,831 | DEBUG    | software_fj.main       | Finalizó Op 15 - Reserva de asesoría por 2 horas
+2026-11-16 11:39:19,831 | ERROR    | software_fj.main       | Op 16 - Reserva de asesoría por 20 horas (excede el máximo) | ReservaError: [FJ-300] No se pudo crear la reserva 4 para 'Asesoría Python'  <-causado por-  ServicioError: [FJ-200] El campo 'horas' debe ser <= 8
+2026-11-16 11:39:19,831 | DEBUG    | software_fj.main       | Finalizó Op 16 - Reserva de asesoría por 20 horas (excede el máximo)
+2026-11-16 11:39:19,831 | ERROR    | software_fj.main       | Op 17 - Reserva con cliente inexistente | RegistroNoEncontrado: [FJ-510] No existe un cliente con código 99
+2026-11-16 11:39:19,832 | DEBUG    | software_fj.main       | Finalizó Op 17 - Reserva con cliente inexistente
+2026-11-16 11:39:19,832 | INFO     | software_fj.reserva    | Reserva 1 confirmada
+2026-11-16 11:39:19,832 | DEBUG    | software_fj.reserva    | Fin del intento de confirmar la reserva 1
+2026-11-16 11:39:19,832 | INFO     | software_fj.main       | Op 18 - Confirmar reserva 1 | OK
+2026-11-16 11:39:19,832 | DEBUG    | software_fj.main       | Finalizó Op 18 - Confirmar reserva 1
+2026-11-16 11:39:19,832 | INFO     | software_fj.reserva    | Reserva 1 procesada. Total: $178,500.00
+2026-11-16 11:39:19,832 | INFO     | software_fj.main       | Op 19 - Procesar reserva 1 (IVA por defecto) | OK
+2026-11-16 11:39:19,832 | DEBUG    | software_fj.main       | Finalizó Op 19 - Procesar reserva 1 (IVA por defecto)
+2026-11-16 11:39:19,832 | ERROR    | software_fj.main       | Op 20 - Cancelar reserva 1 ya procesada | OperacionNoPermitida: [FJ-310] No se puede cancelar la reserva 1 en estado 'Procesada' (requiere: Confirmada, Pendiente)
+2026-11-16 11:39:19,833 | DEBUG    | software_fj.main       | Finalizó Op 20 - Cancelar reserva 1 ya procesada
+2026-11-16 11:39:19,833 | INFO     | software_fj.reserva    | Reserva 2 confirmada
+2026-11-16 11:39:19,833 | DEBUG    | software_fj.reserva    | Fin del intento de confirmar la reserva 2
+2026-11-16 11:39:19,833 | INFO     | software_fj.main       | Op 21 - Confirmar reserva 2 | OK
+2026-11-16 11:39:19,833 | DEBUG    | software_fj.main       | Finalizó Op 21 - Confirmar reserva 2
+2026-11-16 11:39:19,833 | ERROR    | software_fj.main       | Op 22 - Procesar reserva 2 con descuento de 150 % | ReservaError: [FJ-300] Error al procesar la reserva 2  <-causado por-  CalculoError: [FJ-400] Descuento fuera de rango: 1.5 (debe estar entre 0 y 1)
+2026-11-16 11:39:19,833 | DEBUG    | software_fj.main       | Finalizó Op 22 - Procesar reserva 2 con descuento de 150 %
+2026-11-16 11:39:19,833 | ERROR    | software_fj.main       | Op 23 - Procesar reserva 2 con cupón inválido | ReservaError: [FJ-300] Error al procesar la reserva 2  <-causado por-  CalculoError: [FJ-400] Cupón inválido: 'REGALO'
+2026-11-16 11:39:19,833 | DEBUG    | software_fj.main       | Finalizó Op 23 - Procesar reserva 2 con cupón inválido
+2026-11-16 11:39:19,834 | INFO     | software_fj.reserva    | Reserva 2 procesada. Total: $181,440.00
+2026-11-16 11:39:19,834 | INFO     | software_fj.main       | Op 24 - Procesar reserva 2 con IVA 5 % y cupón FJ20 | OK
+2026-11-16 11:39:19,834 | DEBUG    | software_fj.main       | Finalizó Op 24 - Procesar reserva 2 con IVA 5 % y cupón FJ20
+2026-11-16 11:39:19,834 | WARNING  | software_fj.servicio   | Servicio Asesoría Python deshabilitado (mantenimiento)
+2026-11-16 11:39:19,834 | DEBUG    | software_fj.reserva    | Fin del intento de confirmar la reserva 3
+2026-11-16 11:39:19,834 | ERROR    | software_fj.main       | Op 25 - Confirmar reserva 3 con servicio no disponible | ReservaError: [FJ-300] No se pudo confirmar la reserva 3  <-causado por-  ServicioNoDisponible: [FJ-210] El servicio 'Asesoría Python' no está disponible
+2026-11-16 11:39:19,834 | DEBUG    | software_fj.main       | Finalizó Op 25 - Confirmar reserva 3 con servicio no disponible
+2026-11-16 11:39:19,834 | INFO     | software_fj.reserva    | Reserva 3 cancelada (servicio no disponible)
+2026-11-16 11:39:19,834 | INFO     | software_fj.main       | Op 26 - Cancelar reserva 3 | OK
+2026-11-16 11:39:19,834 | DEBUG    | software_fj.main       | Finalizó Op 26 - Cancelar reserva 3
+2026-11-16 11:39:19,834 | ERROR    | software_fj.main       | Op 27 - Cancelar reserva 3 otra vez | OperacionNoPermitida: [FJ-310] No se puede cancelar la reserva 3 en estado 'Cancelada' (requiere: Confirmada, Pendiente)
+2026-11-16 11:39:19,834 | DEBUG    | software_fj.main       | Finalizó Op 27 - Cancelar reserva 3 otra vez
+2026-11-16 11:39:19,835 | INFO     | software_fj.main       | Simulación terminada: 27 operaciones (13 OK, 14 con error)
